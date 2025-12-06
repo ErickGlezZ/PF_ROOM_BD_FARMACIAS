@@ -9,12 +9,14 @@
     android:background="#849DB2">
 
     <!-- TÍTULO -->
+
+    <!-- CAJA BUSQUEDA -->
     <TextView
-        android:id="@+id/txtTituloBajas"
+        android:id="@+id/txtTituloCambios"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Bajas de Médicos"
+        android:text="Cambios de Médicos"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         android:textStyle="bold"
@@ -22,9 +24,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- CAJA BUSQUEDA -->
     <EditText
-        android:id="@+id/cajaBuscarSSN_Bajas"
+        android:id="@+id/cajaBuscarSSN"
         android:layout_width="0dp"
         android:layout_height="55dp"
         android:layout_marginTop="24dp"
@@ -33,47 +34,50 @@
         android:paddingStart="16dp"
         android:textColor="#1A2A3A"
         android:textColorHint="#5A6B7A"
-        app:layout_constraintTop_toBottomOf="@id/txtTituloBajas"
+        app:layout_constraintTop_toBottomOf="@id/txtTituloCambios"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <!-- BOTÓN BUSCAR -->
     <Button
-        android:id="@+id/btnBuscarMedico_Bajas"
+        android:id="@+id/btnBuscarMedico"
         android:layout_width="0dp"
         android:layout_height="55dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/boton_redondo"
         android:text="Buscar"
         android:textColor="#FFFFFF"
-        app:layout_constraintTop_toBottomOf="@id/cajaBuscarSSN_Bajas"
+        app:layout_constraintTop_toBottomOf="@id/cajaBuscarSSN"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- TARJETA CONTENEDORA DEL RECYCLERVIEW -->
+    <!-- TARJETA DEL RECYCLERVIEW -->
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardLista_Bajas"
+        android:id="@+id/cardLista"
         android:layout_width="366dp"
         android:layout_height="451dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/fondo_panel"
         app:cardCornerRadius="18dp"
         app:cardElevation="8dp"
-        app:layout_constraintTop_toBottomOf="@id/btnBuscarMedico_Bajas"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnEliminarMedico"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btnEliminarMedico_Bajas">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnBuscarMedico">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerResultados_Bajas"
+            android:id="@+id/recyclerResultados"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="12dp" />
     </androidx.cardview.widget.CardView>
 
     <!-- BOTÓN ELIMINAR -->
+
+    <!-- BOTÓN REGRESAR -->
+
     <Button
-        android:id="@+id/btnEliminarMedico_Bajas"
+        android:id="@+id/btnEliminarMedico"
         android:layout_width="0dp"
         android:layout_height="55dp"
         android:layout_marginTop="32dp"
@@ -81,13 +85,12 @@
         android:background="@drawable/boton_redondo"
         android:text="Eliminar"
         android:textColor="#FFFFFF"
-        app:layout_constraintTop_toBottomOf="@id/cardLista_Bajas"
+        app:layout_constraintEnd_toStartOf="@id/btnRegresarCambios"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btnRegresarBajas" />
+        app:layout_constraintTop_toBottomOf="@id/cardLista" />
 
-    <!-- BOTÓN REGRESAR -->
     <Button
-        android:id="@+id/btnRegresarBajas"
+        android:id="@+id/btnRegresarCambios"
         android:layout_width="0dp"
         android:layout_height="55dp"
         android:layout_marginStart="12dp"
@@ -95,8 +98,8 @@
         android:background="@drawable/boton_redondo"
         android:text="Regresar"
         android:textColor="#FFFFFF"
-        app:layout_constraintTop_toBottomOf="@id/cardLista_Bajas"
-        app:layout_constraintStart_toEndOf="@id/btnEliminarMedico_Bajas"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnEliminarMedico"
+        app:layout_constraintTop_toBottomOf="@id/cardLista" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
