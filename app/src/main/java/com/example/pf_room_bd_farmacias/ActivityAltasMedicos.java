@@ -2,6 +2,7 @@ package com.example.pf_room_bd_farmacias;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -32,4 +33,8 @@ public class ActivityAltasMedicos extends Activity {
         spinnerEspecialidad.setAdapter(adapter);
 
     }
+    public void regresar(View v) {
+        finish();
+    }
+
 }

@@ -22,7 +22,13 @@ public class ActivityMedicos extends Activity {
             i = new Intent(this, ActivityBajasMedicos.class);
         } else if (view.getId() == R.id.btnCambiosMedicos) {
             i = new Intent(this, ActivityCambiosMedicos.class);
+        } else if (view.getId() == R.id.btnConsultasMedicos) {
+            i = new Intent(this, ActivityConsultasMedicos.class);
         }
         startActivity(i);
+    }
+
+    public void regresar(View v) {
+        finish();
     }
 }

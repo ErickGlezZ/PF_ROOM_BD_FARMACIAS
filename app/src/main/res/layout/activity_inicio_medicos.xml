@@ -80,6 +80,7 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/boton_redondo"
+        android:onClick="abrirActivitiesMedico"
         android:text="Consultas"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
@@ -92,16 +93,17 @@
         android:id="@+id/btnRegresarMedicos"
         android:layout_width="0dp"
         android:layout_height="55dp"
-        android:text="Regresar"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/boton_redondo"
-        android:textSize="18sp"
+        android:layout_marginHorizontal="40dp"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="40dp"
-        app:layout_constraintTop_toBottomOf="@id/btnConsultasMedicos"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/boton_redondo"
+        android:onClick="regresar"
+        android:text="Regresar"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginHorizontal="40dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnConsultasMedicos" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

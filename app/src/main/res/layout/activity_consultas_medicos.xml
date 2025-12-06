@@ -73,7 +73,7 @@
         android:id="@+id/btnRegresarConsultas"
         android:layout_width="0dp"
         android:layout_height="55dp"
-        android:layout_marginTop="544dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/boton_redondo"
         android:text="Regresar"
         android:textColor="#FFFFFF"

@@ -27,6 +27,7 @@
         <activity android:name=".ActivityAltasMedicos"></activity>
         <activity android:name=".ActivityBajasMedicos"></activity>
         <activity android:name=".ActivityCambiosMedicos"></activity>
+        <activity android:name=".ActivityConsultasMedicos"></activity>
     </application>
 
 </manifest>
