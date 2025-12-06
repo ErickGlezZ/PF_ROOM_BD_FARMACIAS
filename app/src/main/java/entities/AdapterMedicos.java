@@ -75,5 +75,16 @@ public class AdapterMedicos extends RecyclerView.Adapter<AdapterMedicos.ViewHold
             card = (CardView) itemView;
         }
     }
+
+    public void eliminarPorSSN(String ssn) {
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).getSSN().equals(ssn)) {
+                lista.remove(i);
+                notifyItemRemoved(i);
+                return;
+            }
+        }
+    }
+
 }
 

@@ -2,7 +2,9 @@ package com.example.pf_room_bd_farmacias;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -22,6 +24,7 @@ public class ActivityBajasMedicos extends Activity {
     EditText cajaBuscarSSN;
     RecyclerView recycler;
     AdapterMedicos adapter;
+    Button btnEliminar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,9 @@ public class ActivityBajasMedicos extends Activity {
         setContentView(R.layout.activity_bajas_medicos);
 
         cajaBuscarSSN = findViewById(R.id.cajaBuscarSSN_Bajas);
+        btnEliminar = findViewById(R.id.btnEliminarMedico_Bajas);
+        btnEliminar.setEnabled(false);
+        btnEliminar.setAlpha(0.5f);
 
         recycler = findViewById(R.id.recyclerResultados_Bajas);
         recycler.setLayoutManager(new LinearLayoutManager(this));
@@ -36,6 +42,18 @@ public class ActivityBajasMedicos extends Activity {
         // Lista vacía al inicio
         adapter = new AdapterMedicos(new ArrayList<>());
         recycler.setAdapter(adapter);
+
+        InputFilter soloNumeros = (source, start, end, dest, dstart, dend) -> {
+            for (int i = start; i < end; i++) {
+                if (!Character.isDigit(source.charAt(i))) return "";
+            }
+            return null;
+        };
+
+        cajaBuscarSSN.setFilters(new InputFilter[]{
+                soloNumeros,
+                new InputFilter.LengthFilter(6)
+        });
     }
 
     public void buscarMedicos(View v) {
@@ -47,15 +65,26 @@ public class ActivityBajasMedicos extends Activity {
             return;
         }
 
+        if (!ssn.matches("\\d{6}")) {
+            Toast.makeText(this, "El SSN debe tener exactamente 6 números", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         FarmaciaBD bd = FarmaciaBD.getAppDatabase(getBaseContext());
 
         new Thread(() -> {
 
             List<Medico> resultados = bd.medicoDAO().buscarPorSSN(ssn);
 
+
             runOnUiThread(() -> {
                 if (resultados.isEmpty()) {
                     Toast.makeText(this, "No se encontró ningún médico", Toast.LENGTH_SHORT).show();
+                    btnEliminar.setEnabled(false);
+                    btnEliminar.setAlpha(0.5f);
+                } else {
+                    btnEliminar.setEnabled(true);
+                    btnEliminar.setAlpha(1f);
                 }
 
                 adapter.actualizarLista(resultados);
@@ -63,5 +92,57 @@ public class ActivityBajasMedicos extends Activity {
 
         }).start();
     }
+
+
+    public void eliminarMedico(View v) {
+
+        String ssn = cajaBuscarSSN.getText().toString().trim();
+
+        // VALIDACIÓN: Campo vacío
+        if (ssn.isEmpty()) {
+            Toast.makeText(this, "Debes ingresar un SSN para eliminar", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // VALIDACIÓN: Exactamente 6 números
+        if (!ssn.matches("\\d{6}")) {
+            Toast.makeText(this, "El SSN debe tener exactamente 6 números", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        FarmaciaBD bd = FarmaciaBD.getAppDatabase(getBaseContext());
+
+        // HILO PARA ROOM
+        new Thread(() -> {
+
+
+            Medico medico = bd.medicoDAO().buscarMedicoPorSSN(ssn);
+
+            if (medico == null) {
+                runOnUiThread(() ->
+                        Toast.makeText(this, "No existe un médico con ese SSN", Toast.LENGTH_SHORT).show()
+                );
+                return;
+            }
+
+
+            bd.medicoDAO().eliminarMedico(medico);
+
+            runOnUiThread(() -> {
+                Toast.makeText(this, "Médico eliminado correctamente", Toast.LENGTH_SHORT).show();
+                adapter.eliminarPorSSN(ssn);
+
+                cajaBuscarSSN.setText("");
+                btnEliminar.setEnabled(false);
+                btnEliminar.setAlpha(0.5f);
+            });
+
+        }).start();
+
+    }
+    public void regresar(View v) {
+        finish();
+    }
+
 }
 
