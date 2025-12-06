@@ -75,6 +75,7 @@
         android:layout_height="55dp"
         android:layout_marginTop="44dp"
         android:background="@drawable/boton_redondo"
+        android:onClick="regresar"
         android:text="Regresar"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"

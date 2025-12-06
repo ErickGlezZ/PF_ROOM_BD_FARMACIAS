@@ -22,7 +22,14 @@ public class ActivityInicio extends Activity {
             i = new Intent(this, ActivityMedicos.class);
         } else if (view.getId() == R.id.btn_pacientes) {
 
+        } else if (view.getId() == R.id.btn_cerrar_sesion) {
+            i = new Intent(this, MainActivity.class);
         }
         startActivity(i);
+    }
+
+
+    public void regresar(View v) {
+        finish();
     }
 }
