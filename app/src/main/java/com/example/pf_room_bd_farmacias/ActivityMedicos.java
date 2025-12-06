@@ -18,6 +18,8 @@ public class ActivityMedicos extends Activity {
         Intent i = null;
         if (view.getId() == R.id.btnAltasMedicos){
             i = new Intent(this, ActivityAltasMedicos.class);
+        } else if (view.getId() == R.id.btnBajasMedicos) {
+            i = new Intent(this, ActivityBajasMedicos.class);
         }
         startActivity(i);
     }

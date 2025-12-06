@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- SOMBRA INFERIOR (efecto 3D) -->
+    <item>
+        <shape>
+            <solid android:color="#A0B4C6"/> <!-- Sombra gris-azulada ligera -->
+            <corners android:radius="22dp"/>
+        </shape>
+    </item>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <item android:top="4dp" android:bottom="4dp">
+        <shape>
+            <solid android:color="#D9E2EC"/>  <!-- Gris-azulado más claro (contrasta bien) -->
+            <corners android:radius="20dp"/>
+            <stroke android:width="2dp" android:color="#B3C3D3"/> <!-- Borde leve profesional -->
+        </shape>
+    </item>
+
+</layer-list>

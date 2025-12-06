@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:paddingTop="40dp"
+    android:background="#849DB2">
+
+    <!-- TÍTULO -->
+
+    <!-- CAJA SSN -->
+
+    <TextView
+        android:id="@+id/txtTituloBajas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Bajas de Médicos"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- BOTÓN BUSCAR -->
+    <EditText
+        android:id="@+id/cajaBuscarSSN"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="24dp"
+        android:background="#FFFFFF"
+        android:hint="SSN del Médico"
+        android:paddingStart="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTituloBajas" />
+
+    <Button
+        android:id="@+id/btnBuscarMedico"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:text="Buscar"
+        android:background="@drawable/boton_redondo"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/cajaBuscarSSN"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- NUEVO RECYCLERVIEW -->
+
+    <!-- BOTÓN ELIMINAR -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerResultados"
+        android:layout_width="380dp"
+        android:layout_height="500dp"
+        android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@id/btnEliminarMedico"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnBuscarMedico" />
+
+    <!-- BOTÓN ELIMINAR -->
+    <Button
+        android:id="@+id/btnEliminarMedico"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:text="Eliminar"
+        android:background="@drawable/boton_redondo"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toBottomOf="@id/recyclerResultados"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnRegresarBajas"
+        app:layout_constraintHorizontal_chainStyle="packed" />
+
+    <!-- BOTÓN REGRESAR -->
+    <Button
+        android:id="@+id/btnRegresarBajas"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/boton_redondo"
+        android:text="Regresar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnEliminarMedico"
+        app:layout_constraintTop_toBottomOf="@id/recyclerResultados" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

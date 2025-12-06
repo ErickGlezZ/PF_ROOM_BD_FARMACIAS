@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:cardBackgroundColor="#F1F5F9">     <!-- Fondo con contraste ligero -->
+
+
+<LinearLayout
+android:orientation="horizontal"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:padding="16dp"
+    android:background="@drawable/fondo_item">
+
+    <!-- ICONO IZQUIERDO -->
+<ImageView
+    android:id="@+id/iconMedico"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:src="@drawable/profile"
+    android:layout_marginEnd="16dp"
+    android:background="@drawable/circle_background"
+    android:padding="10dp"/>
+
+<!-- CONTENIDO TEXTO -->
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
+
+    <!-- SSN -->
+    <TextView
+        android:id="@+id/txtSSN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SSN: 000000"
+        android:textColor="#1A2A3A"
+        android:textStyle="bold"
+        android:textSize="14sp"/>
+
+    <!-- NOMBRE + APELLIDO PATERNO -->
+    <TextView
+        android:id="@+id/txtNombreCompleto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Juan Pérez"
+        android:textColor="#1A2A3A"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="4dp"/>
+
+    <!-- ESPECIALIDAD -->
+    <TextView
+        android:id="@+id/txtEspecialidadItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Especialidad: Cardiología"
+        android:textColor="#4A5568"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp"/>
+
+    <!-- LÍNEA DECORATIVA -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:background="#1A2A3A"/>
+</LinearLayout>
+</LinearLayout>
+
+    </androidx.cardview.widget.CardView>

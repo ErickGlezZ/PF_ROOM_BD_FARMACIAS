@@ -43,15 +43,16 @@
         android:id="@+id/btnBajasMedicos"
         android:layout_width="0dp"
         android:layout_height="55dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/boton_redondo"
+        android:onClick="abrirActivitiesMedico"
         android:text="Bajas"
         android:textColor="#FFFFFF"
-        android:background="@drawable/boton_redondo"
         android:textSize="18sp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/btnAltasMedicos"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginHorizontal="40dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnAltasMedicos" />
 
     <!-- BOTÓN CAMBIOS -->
     <Button
