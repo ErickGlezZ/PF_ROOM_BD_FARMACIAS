@@ -44,11 +44,12 @@
         android:layout_height="55dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/boton_redondo"
+        android:onClick="buscarMedicos"
         android:text="Buscar"
         android:textColor="#FFFFFF"
-        app:layout_constraintTop_toBottomOf="@id/cajaBuscarSSN_Bajas"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/cajaBuscarSSN_Bajas" />
 
     <!-- TARJETA CONTENEDORA DEL RECYCLERVIEW -->
     <androidx.cardview.widget.CardView

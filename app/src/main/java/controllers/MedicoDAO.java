@@ -39,7 +39,7 @@ public interface MedicoDAO {
     @Query("SELECT * FROM medico")
     List<Medico> obtenerMedicos();
 
-    @Query("SELECT * FROM medico WHERE Nombre = :nombre")
-    List<Medico> mostrarPorNombre(String nombre);
+    @Query("SELECT * FROM medico WHERE SSN  LIKE  :ssn")
+    List<Medico> buscarPorSSN(String ssn);
 }
 

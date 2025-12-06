@@ -109,7 +109,7 @@ public class ActivityAltasMedicos extends Activity {
             return;
         }
 
-        // OBJETO MÉDICO
+
         Medico medico = new Medico(ssn, nom, pat, mat, especialidad, exp);
 
         FarmaciaBD bd = FarmaciaBD.getAppDatabase(getBaseContext());

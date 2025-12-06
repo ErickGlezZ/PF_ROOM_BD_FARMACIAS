@@ -75,7 +75,7 @@ public class Medico {
         return especialidad;
     }
 
-    public int getAniosExperiencia() {
+    public int getAñosExperiencia() {
         return aniosExperiencia;
     }
 
