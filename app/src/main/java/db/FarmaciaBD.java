@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import controllers.MedicoDAO;
 import entities.Medico;
 
-@Database(entities = {Medico.class}, version = 1)
+@Database(entities = {Medico.class}, version = 1,  exportSchema = false)
 public abstract class FarmaciaBD extends RoomDatabase {
 
     private static FarmaciaBD INSTANCE;
