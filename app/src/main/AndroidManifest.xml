@@ -24,6 +24,7 @@
 
         <activity android:name=".ActivityInicio"></activity>
         <activity android:name=".ActivityMedicos"></activity>
+        <activity android:name=".ActivityAltasMedicos"></activity>
     </application>
 
 </manifest>

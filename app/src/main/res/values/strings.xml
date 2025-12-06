@@ -3,4 +3,17 @@
     <string name="txt_btn_ingresar">INICIAR SESIÓN</string>
     <string name="hint_cajaUsuaro">Usuario</string>
     <string name="hint_cajaPassword">Contraseña</string>
+
+
+
+
+    <string-array name="especialidades_array">
+        <item>Seleccione especialidad...</item>
+        <item>Pediatría</item>
+        <item>Ginecología</item>
+        <item>Cardiología</item>
+        <item>Medicina General</item>
+        <item>Dermatología</item>
+        <item>Neurología</item>
+    </string-array>
 </resources>
