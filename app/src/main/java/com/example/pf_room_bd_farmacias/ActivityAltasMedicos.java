@@ -24,10 +24,10 @@ public class ActivityAltasMedicos extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_altas_medicos);
 
-        cajaSSN        = findViewById(R.id.cajaSSN);
-        cajaNombre     = findViewById(R.id.cajaNombre);
-        cajaPaterno    = findViewById(R.id.cajaPaterno);
-        cajaMaterno    = findViewById(R.id.cajaMaterno);
+        cajaSSN = findViewById(R.id.cajaSSN);
+        cajaNombre = findViewById(R.id.cajaNombre);
+        cajaPaterno = findViewById(R.id.cajaPaterno);
+        cajaMaterno = findViewById(R.id.cajaMaterno);
         cajaExperiencia = findViewById(R.id.cajaExperiencia);
         spinnerEspecialidad = findViewById(R.id.spinnerEspecialidad);
 
@@ -36,23 +36,53 @@ public class ActivityAltasMedicos extends Activity {
         cajaPaterno.setFilters(new InputFilter[]{soloLetrasFilter});
         cajaMaterno.setFilters(new InputFilter[]{soloLetrasFilter});
 
-        InputFilter soloNumerosFilter = (source, start, end, dest, dstart, dend) -> {
+        InputFilter filtroSSN = (source, start, end, dest, dstart, dend) -> {
+
+            // Validar solo números
             for (int i = start; i < end; i++) {
                 if (!Character.isDigit(source.charAt(i))) {
+                    Toast.makeText(this, "Solo debes ingresar números", Toast.LENGTH_SHORT).show();
                     return "";
                 }
             }
+
+            // Validar máximo 6
+            if (dest.length() >= 6) {
+                Toast.makeText(this, "Solo puedes ingresar 6 números", Toast.LENGTH_SHORT).show();
+                return "";
+            }
+
             return null;
         };
 
+
+        InputFilter filtroExperiencia = (source, start, end, dest, dstart, dend) -> {
+
+
+            for (int i = start; i < end; i++) {
+                if (!Character.isDigit(source.charAt(i))) {
+                    Toast.makeText(this, "Solo debes ingresar números", Toast.LENGTH_SHORT).show();
+                    return "";
+                }
+            }
+
+
+            if (dest.length() >= 2) {
+                Toast.makeText(this, "Solo puedes ingresar 2 números", Toast.LENGTH_SHORT).show();
+                return "";
+            }
+
+            return null;
+        };
+
+
         cajaSSN.setFilters(new InputFilter[]{
-                soloNumerosFilter,
-                new InputFilter.LengthFilter(6)   // máximo 6
+                filtroSSN
         });
 
 
         cajaExperiencia.setFilters(new InputFilter[]{
-                new InputFilter.LengthFilter(2)   // máximo 2 dígitos
+                filtroExperiencia
         });
 
         // ADAPTADOR DEL SPINNER
@@ -66,7 +96,7 @@ public class ActivityAltasMedicos extends Activity {
         spinnerEspecialidad.setAdapter(adapter);
     }
 
-    // MÉTODO PARA AGREGAR MÉDICO
+
     public void agregarMedico(View v) {
 
         String ssn = cajaSSN.getText().toString();
@@ -160,9 +190,11 @@ public class ActivityAltasMedicos extends Activity {
 
         for (int i = start; i < end; i++) {
             if (!String.valueOf(source.charAt(i)).matches(permitidos)) {
+                Toast.makeText(this, "Solo debes ingresar letras", Toast.LENGTH_SHORT).show();
                 return "";
             }
         }
+
         return null;
     };
 

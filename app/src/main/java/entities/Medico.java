@@ -29,7 +29,7 @@ public class Medico {
     public String especialidad;
 
     @ColumnInfo(name = "Años_Experiencia")
-    public int aniosExperiencia;
+    public int añosExperiencia;
 
 
     // ---------- CONSTRUCTOR ----------
@@ -38,14 +38,14 @@ public class Medico {
                   @NonNull String apePaterno,
                   @NonNull String apeMaterno,
                   @NonNull String especialidad,
-                  int aniosExperiencia) {
+                  int añosExperiencia) {
 
         this.SSN = SSN;
         this.nombre = nombre;
         this.apePaterno = apePaterno;
         this.apeMaterno = apeMaterno;
         this.especialidad = especialidad;
-        this.aniosExperiencia = aniosExperiencia;
+        this.añosExperiencia = añosExperiencia;
     }
 
 
@@ -76,7 +76,7 @@ public class Medico {
     }
 
     public int getAñosExperiencia() {
-        return aniosExperiencia;
+        return añosExperiencia;
     }
 
 
@@ -101,8 +101,8 @@ public class Medico {
         this.especialidad = especialidad;
     }
 
-    public void setAniosExperiencia(int aniosExperiencia) {
-        this.aniosExperiencia = aniosExperiencia;
+    public void setAñosExperiencia(int añosExperiencia) {
+        this.añosExperiencia = añosExperiencia;
     }
 
 
@@ -113,7 +113,7 @@ public class Medico {
                 "SSN = '" + SSN + '\'' + '\n' +
                 "Nombre = '" + nombre + " " + apePaterno + " " + apeMaterno + '\'' + '\n' +
                 "Especialidad = '" + especialidad + '\'' + '\n' +
-                "Años de experiencia = " + aniosExperiencia;
+                "Años de experiencia = " + añosExperiencia;
     }
 }
 

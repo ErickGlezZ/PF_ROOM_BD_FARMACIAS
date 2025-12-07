@@ -49,6 +49,7 @@
         android:layout_height="55dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/boton_redondo"
+        android:onClick="buscarMedicoCambios"
         android:text="Buscar"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,7 +113,6 @@
         android:layout_height="55dp"
         android:background="@drawable/caja_modern_gris"
         android:hint="Años de Experiencia"
-        android:inputType="number"
         android:paddingStart="12dp"
         android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@id/spinnerEspecialidad"
@@ -124,13 +124,14 @@
         android:id="@+id/btnGuardarCambiosMedico"
         android:layout_width="0dp"
         android:layout_height="55dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/boton_redondo"
+        android:onClick="guardarCambiosMedico"
         android:text="Guardar Cambios"
         android:textColor="#FFFFFF"
-        android:background="@drawable/boton_redondo"
-        android:layout_marginTop="40dp"
-        app:layout_constraintTop_toBottomOf="@id/cajaExperiencia"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/cajaExperiencia" />
 
     <!-- BOTÓN REGRESAR -->
     <Button

@@ -95,7 +95,6 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/caja_modern_gris"
         android:hint="Años de Experiencia"
-        android:inputType="number"
         android:paddingStart="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
