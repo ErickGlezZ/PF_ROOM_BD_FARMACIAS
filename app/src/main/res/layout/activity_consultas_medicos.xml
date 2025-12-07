@@ -27,7 +27,7 @@
         android:id="@+id/labelFiltroMedicos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Escribe para filtrar por nombre, apellido o SSN:"
+        android:text="Escribe para filtrar Medicos:"
         android:textSize="16sp"
         android:textColor="#E8EDF2"
         android:layout_marginTop="18dp"
