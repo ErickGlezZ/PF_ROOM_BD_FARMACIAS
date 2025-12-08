@@ -43,19 +43,27 @@ public class ActivityBajasMedicos extends Activity {
         adapter = new AdapterMedicos(new ArrayList<>());
         recycler.setAdapter(adapter);
 
-        InputFilter soloNumeros = (source, start, end, dest, dstart, dend) -> {
+        InputFilter filtroSSN = (source, start, end, dest, dstart, dend) -> {
+
+            // Validar solo números
             for (int i = start; i < end; i++) {
                 if (!Character.isDigit(source.charAt(i))) {
                     Toast.makeText(this, "Solo debes ingresar números", Toast.LENGTH_SHORT).show();
                     return "";
                 }
             }
+
+            // Validar máximo 6
+            if (dest.length() >= 6) {
+                Toast.makeText(this, "Solo puedes ingresar 6 números", Toast.LENGTH_SHORT).show();
+                return "";
+            }
+
             return null;
         };
 
         cajaBuscarSSN.setFilters(new InputFilter[]{
-                soloNumeros,
-                new InputFilter.LengthFilter(6)
+                filtroSSN
         });
     }
 
