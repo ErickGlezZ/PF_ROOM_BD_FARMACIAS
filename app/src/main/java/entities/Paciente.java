@@ -44,7 +44,6 @@ public class Paciente {
     public String ssnMedicoCabecera;
 
 
-    // ---------- CONSTRUCTOR ----------
     public Paciente(@NonNull String SSN,
                     @NonNull String nombre,
                     @NonNull String apePaterno,

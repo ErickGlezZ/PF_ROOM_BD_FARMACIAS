@@ -28,6 +28,8 @@
         <activity android:name=".ActivityBajasMedicos"></activity>
         <activity android:name=".ActivityCambiosMedicos"></activity>
         <activity android:name=".ActivityConsultasMedicos"></activity>
+
+        <activity android:name=".ActivityAltasPacientes"></activity>
     </application>
 
 </manifest>
