@@ -50,7 +50,7 @@ public class ActivityConsultasPacientes extends Activity {
                     if (source.length() == 0) {
                         return null;
                     }
-                    
+
                     String permitido = "[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+";
 
                     if (source.toString().matches(permitido)) {

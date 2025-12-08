@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
 
-            if (usuario.equals("1") && password.equals("1")) {
+            if (usuario.equals("admin") && password.equals("room1234")) {
 
                 Intent intent = new Intent(MainActivity.this, ActivityInicio.class);
                 startActivity(intent);

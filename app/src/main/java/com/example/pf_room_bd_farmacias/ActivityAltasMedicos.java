@@ -186,17 +186,26 @@ public class ActivityAltasMedicos extends Activity {
 
     // FILTRO SOLO LETRAS
     private final InputFilter soloLetrasFilter = (source, start, end, dest, dstart, dend) -> {
-        String permitidos = "[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+";
 
         for (int i = start; i < end; i++) {
-            if (!String.valueOf(source.charAt(i)).matches(permitidos)) {
-                Toast.makeText(this, "Solo debes ingresar letras", Toast.LENGTH_SHORT).show();
-                return "";
+            char c = source.charAt(i);
+
+
+            if (c == '\b') return null;
+
+
+            if (Character.isLetter(c) || c == ' ') {
+                continue;
             }
+
+            Toast.makeText(this, "Solo debes ingresar letras", Toast.LENGTH_SHORT).show();
+            return "";
         }
 
         return null;
     };
+
+
 
     public void regresar(View v) {
         finish();
