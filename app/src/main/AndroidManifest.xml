@@ -33,6 +33,7 @@
         <activity android:name=".ActivityAltasPacientes"></activity>
         <activity android:name=".ActivityBajasPacientes"></activity>
         <activity android:name=".ActivityCambiosPacientes"></activity>
+        <activity android:name=".ActivityConsultasPacientes"></activity>
     </application>
 
 </manifest>

@@ -22,11 +22,10 @@ public class ActivityPacientes extends Activity {
             i = new Intent(this, ActivityBajasPacientes.class);
         } else if (view.getId() == R.id.btnCambiosPacientes) {
             i = new Intent(this, ActivityCambiosPacientes.class);
-        } /*else if (view.getId() == R.id.btnConsultasPacientes) {
-            i = new Intent(this, ActivityConsultasMedicos.class);
+        } else if (view.getId() == R.id.btnConsultasPacientes) {
+            i = new Intent(this, ActivityConsultasPacientes.class);
         }
 
-         */
         startActivity(i);
     }
 

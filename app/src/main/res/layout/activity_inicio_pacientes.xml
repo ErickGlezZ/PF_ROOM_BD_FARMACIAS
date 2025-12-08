@@ -80,7 +80,7 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/boton_redondo"
-        android:onClick="abrirActivitiesMedico"
+        android:onClick="abrirActivitiesPaciente"
         android:text="Consultas"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
