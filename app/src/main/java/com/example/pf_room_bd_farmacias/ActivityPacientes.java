@@ -18,10 +18,9 @@ public class ActivityPacientes extends Activity {
         Intent i = null;
         if (view.getId() == R.id.btnAltasPacientes){
             i = new Intent(this, ActivityAltasPacientes.class);
-        }
-        /*else if (view.getId() == R.id.btnBajasPacientes) {
-            i = new Intent(this, ActivityBajasMedicos.class);
-        } else if (view.getId() == R.id.btnCambiosPacientes) {
+        } else if (view.getId() == R.id.btnBajasPacientes) {
+            i = new Intent(this, ActivityBajasPacientes.class);
+        } /*else if (view.getId() == R.id.btnCambiosPacientes) {
             i = new Intent(this, ActivityCambiosMedicos.class);
         } else if (view.getId() == R.id.btnConsultasPacientes) {
             i = new Intent(this, ActivityConsultasMedicos.class);

@@ -46,7 +46,7 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/boton_redondo"
-        android:onClick="abrirActivitiesMedico"
+        android:onClick="abrirActivitiesPaciente"
         android:text="Bajas"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
