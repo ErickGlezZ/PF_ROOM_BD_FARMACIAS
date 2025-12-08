@@ -52,12 +52,18 @@ public class ActivityBajasPacientes extends Activity {
                     return "";
                 }
             }
+
+
+            if (dest.length() >= 6) {
+                Toast.makeText(this, "Solo puedes ingresar 6 números", Toast.LENGTH_SHORT).show();
+                return "";
+            }
+
             return null;
         };
 
         cajaBuscarSSN.setFilters(new InputFilter[]{
-                soloNumeros,
-                new InputFilter.LengthFilter(6) // SSN = 6 dígitos
+                soloNumeros
         });
     }
 

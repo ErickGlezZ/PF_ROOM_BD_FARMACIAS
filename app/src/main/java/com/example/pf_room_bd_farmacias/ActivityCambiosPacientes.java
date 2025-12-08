@@ -249,11 +249,17 @@ public class ActivityCambiosPacientes extends Activity {
     InputFilter filtroSSN = (source, start, end, dest, dstart, dend) -> {
         for (int i = start; i < end; i++) {
             if (!Character.isDigit(source.charAt(i))) {
-                Toast.makeText(this, "Solo números", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Solo debes ingresar números", Toast.LENGTH_SHORT).show();
                 return "";
             }
         }
-        if (dest.length() >= 6) return "";
+
+
+        if (dest.length() >= 6) {
+            Toast.makeText(this, "Solo puedes ingresar 6 números", Toast.LENGTH_SHORT).show();
+            return "";
+        }
+
         return null;
     };
 
