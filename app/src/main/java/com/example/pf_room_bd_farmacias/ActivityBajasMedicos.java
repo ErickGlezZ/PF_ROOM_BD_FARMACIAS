@@ -109,13 +109,11 @@ public class ActivityBajasMedicos extends Activity {
 
         String ssn = cajaBuscarSSN.getText().toString().trim();
 
-        // VALIDACIÓN: Campo vacío
         if (ssn.isEmpty()) {
             Toast.makeText(this, "Debes ingresar un SSN para eliminar", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // VALIDACIÓN: Exactamente 6 números
         if (!ssn.matches("\\d{6}")) {
             Toast.makeText(this, "El SSN debe tener exactamente 6 números", Toast.LENGTH_SHORT).show();
             return;
@@ -123,7 +121,6 @@ public class ActivityBajasMedicos extends Activity {
 
         FarmaciaBD bd = FarmaciaBD.getAppDatabase(getBaseContext());
 
-        // HILO PARA ROOM
         new Thread(() -> {
 
 
@@ -137,20 +134,49 @@ public class ActivityBajasMedicos extends Activity {
             }
 
 
-            bd.medicoDAO().eliminarMedico(medico);
+            int totalPacientes = bd.medicoDAO().contarPacientesDeMedico(ssn);
+
 
             runOnUiThread(() -> {
-                Toast.makeText(this, "Médico eliminado correctamente", Toast.LENGTH_SHORT).show();
-                adapter.eliminarPorSSN(ssn);
 
-                cajaBuscarSSN.setText("");
-                btnEliminar.setEnabled(false);
-                btnEliminar.setAlpha(0.5f);
+                String mensaje = "El médico " + medico.getNombre() +
+                        " tiene asignados " + totalPacientes + " pacientes.\n" +
+                        "Si eliminas al médico, también se eliminarán sus pacientes.\n\n" +
+                        "¿Deseas continuar?";
+
+                new android.app.AlertDialog.Builder(this)
+                        .setTitle("Confirmar eliminación")
+                        .setMessage(mensaje)
+                        .setPositiveButton("Sí, eliminar", (dialog, which) -> {
+
+                            // Hilo para eliminar
+                            new Thread(() -> {
+
+                                bd.medicoDAO().eliminarMedico(medico);
+
+                                runOnUiThread(() -> {
+                                    Toast.makeText(this, "Médico y pacientes eliminados", Toast.LENGTH_LONG).show();
+                                    adapter.eliminarPorSSN(ssn);
+                                    cajaBuscarSSN.setText("");
+                                    btnEliminar.setEnabled(false);
+                                    btnEliminar.setAlpha(0.5f);
+                                });
+
+                            }).start();
+
+                        })
+                        .setNegativeButton("No", (dialog, which) -> {
+                            // No hacer nada
+                            Toast.makeText(this, "Operación cancelada", Toast.LENGTH_SHORT).show();
+                        })
+                        .setCancelable(false)
+                        .show();
+
             });
 
         }).start();
-
     }
+
     public void regresar(View v) {
         finish();
     }

@@ -24,6 +24,10 @@ public interface MedicoDAO {
     @Query("DELETE FROM medico WHERE SSN = :ssn")
     void eliminarMedicoPorSSN(String ssn);
 
+    @Query("SELECT COUNT(*) FROM pacientes WHERE SSN_Medico_Cabecera = :ssnMedico")
+    int contarPacientesDeMedico(String ssnMedico);
+
+
     //-------------- BUSCAR ----------------
     @Query("SELECT * FROM medico WHERE SSN = :ssn")
     Medico buscarMedicoPorSSN(String ssn);
