@@ -3,6 +3,27 @@
     <string name="txt_btn_ingresar">INICIAR SESIÓN</string>
     <string name="hint_cajaUsuaro">Usuario</string>
     <string name="hint_cajaPassword">Contraseña</string>
+    <string name="txt_altas_medicos">Altas Medicos</string>
+    <string name="txt_altas_pacientes">Altas Paciente</string>
+    <string name="tct_bajas_med">Bajas Medicos</string>
+    <string name="txt_bajas_pac">Bajas Pacientes</string>
+    <string name="txt_cambios_med">Cambios Medicos</string>
+    <string name="txt_cambios_pac">Cambios Pacientes</string>
+    <string name="txt_consultas_med">Consultas Medicos</string>
+    <string name="txt_consultas_pac">Consultas Pacientes</string>
+    <string name="hint_ssn_medico">SSN del Medico</string>
+    <string name="hint_nombre_med">Nombre</string>
+    <string name="hint_ape_paterno_med">Apellido Paterno</string>
+    <string name="hint_ape_materno_med">Apellido Materno</string>
+    <string name="hint_años_exp">Años de Experiencia</string>
+    <string name="btn_guardar">Guardar</string>
+    <string name="btn_regresar">Regresar</string>
+    <string name="btn_buscar">Buscar</string>
+    <string name="btn_eliminar">Eliminar</string>
+    <string name="btn_guardar_cambios">Guardar Cambios</string>
+    <string name="txt_nom_medico">Nombre del medico</string>
+    <string name="txt_filtro_med">Escribe para filtrar Medicos:</string>
+    <string name="txt_filtro_pac">Escribe para filtrar Pacientes:</string>
 
 
 

@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Editar Paciente"
+        android:text="@string/txt_cambios_pac"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         android:textStyle="bold"

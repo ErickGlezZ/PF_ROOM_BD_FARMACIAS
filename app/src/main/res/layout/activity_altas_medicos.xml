@@ -15,61 +15,61 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Altas de Médicos"
+        android:text="@string/txt_altas_medicos"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/cajaSSN"
         android:layout_width="0dp"
         android:layout_height="55dp"
-        android:background="@drawable/caja_modern_gris"
-        android:hint="SSN del Médico"
-        android:paddingStart="12dp"
-        app:layout_constraintTop_toBottomOf="@id/txtTituloAltas"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:background="@drawable/caja_modern_gris"
+        android:hint="@string/hint_ssn_medico"
+        android:paddingStart="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTituloAltas" />
 
     <EditText
         android:id="@+id/cajaNombre"
         android:layout_width="0dp"
         android:layout_height="55dp"
-        android:background="@drawable/caja_modern_gris"
-        android:hint="Nombre"
-        android:paddingStart="12dp"
         android:layout_marginTop="15dp"
-        app:layout_constraintTop_toBottomOf="@id/cajaSSN"
+        android:background="@drawable/caja_modern_gris"
+        android:hint="@string/hint_nombre_med"
+        android:paddingStart="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/cajaSSN" />
 
     <EditText
         android:id="@+id/cajaPaterno"
         android:layout_width="0dp"
         android:layout_height="55dp"
-        android:background="@drawable/caja_modern_gris"
-        android:hint="Apellido Paterno"
-        android:paddingStart="12dp"
         android:layout_marginTop="15dp"
-        app:layout_constraintTop_toBottomOf="@id/cajaNombre"
+        android:background="@drawable/caja_modern_gris"
+        android:hint="@string/hint_ape_paterno_med"
+        android:paddingStart="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/cajaNombre" />
 
     <EditText
         android:id="@+id/cajaMaterno"
         android:layout_width="0dp"
         android:layout_height="55dp"
-        android:background="@drawable/caja_modern_gris"
-        android:hint="Apellido Materno"
-        android:paddingStart="12dp"
         android:layout_marginTop="15dp"
-        app:layout_constraintTop_toBottomOf="@id/cajaPaterno"
+        android:background="@drawable/caja_modern_gris"
+        android:hint="@string/hint_ape_materno_med"
+        android:paddingStart="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/cajaPaterno" />
 
 
     <!-- BOTÓN GUARDAR -->
@@ -94,7 +94,7 @@
         android:layout_height="55dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/caja_modern_gris"
-        android:hint="Años de Experiencia"
+        android:hint="@string/hint_años_exp"
         android:paddingStart="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -108,7 +108,7 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/boton_redondo"
         android:onClick="agregarMedico"
-        android:text="Guardar"
+        android:text="@string/btn_guardar"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -122,7 +122,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/boton_redondo"
         android:onClick="regresar"
-        android:text="Regresar"
+        android:text="@string/btn_regresar"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
