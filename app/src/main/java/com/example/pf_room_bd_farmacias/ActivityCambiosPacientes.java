@@ -99,7 +99,9 @@ public class ActivityCambiosPacientes extends Activity {
 
                         for (Medico m : listaMedicos) {
                             if (m.getSSN().equals(ssnSel)) {
-                                tvNombreMedico.setText(m.getNombre());
+                                String mensaje = "Médico Asignado:\n" + m.getNombre();
+
+                                tvNombreMedico.setText(mensaje);
                                 break;
                             }
                         }

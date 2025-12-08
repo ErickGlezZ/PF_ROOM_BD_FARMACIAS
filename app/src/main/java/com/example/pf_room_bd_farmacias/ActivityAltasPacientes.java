@@ -88,7 +88,7 @@ public class ActivityAltasPacientes extends Activity {
             List<Medico> medicos = bd.medicoDAO().obtenerMedicos();
 
             listaMedicos.clear();
-            listaMedicos.addAll(medicos);  // ← Guardamos objetos completos
+            listaMedicos.addAll(medicos);
 
             listaSSNMedicos.clear();
             listaSSNMedicos.add("Selecciona Médico...");
@@ -120,7 +120,9 @@ public class ActivityAltasPacientes extends Activity {
 
                         for (Medico m : listaMedicos) {
                             if (m.getSSN().equals(ssnSeleccionado)) {
-                                tvNombreMedico.setText(m.getNombre());  // ← SOLO nombre
+                                String mensaje = "Médico Asignado:\n" + m.getNombre();
+
+                                tvNombreMedico.setText(mensaje);
                                 break;
                             }
                         }
