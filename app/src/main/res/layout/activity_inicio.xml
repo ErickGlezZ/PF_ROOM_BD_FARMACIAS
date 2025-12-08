@@ -52,13 +52,14 @@
         android:background="@drawable/boton_redondo"
         android:elevation="6dp"
         android:gravity="center"
+        android:onClick="abrirGestoresABCC"
         android:padding="10dp"
         android:text="Gestión de Pacientes"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/btn_medicos"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/btn_medicos" />
 
     <Button
         android:id="@+id/btn_cerrar_sesion"

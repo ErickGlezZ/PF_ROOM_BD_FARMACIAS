@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:paddingTop="40dp"
+    android:background="#849DB2">
+
+    <!-- TÍTULO -->
+    <TextView
+        android:id="@+id/txtTituloAltasPacientes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Altas de Pacientes"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- SSN Paciente -->
+    <EditText
+        android:id="@+id/cajaSSNPaciente"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:background="@drawable/caja_modern_gris"
+        android:hint="SSN del Paciente"
+        android:paddingStart="12dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/txtTituloAltasPacientes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Nombre -->
+    <EditText
+        android:id="@+id/cajaNombrePaciente"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:background="@drawable/caja_modern_gris"
+        android:hint="Nombre"
+        android:paddingStart="12dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/cajaSSNPaciente"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Apellido Paterno -->
+    <EditText
+        android:id="@+id/cajaPaternoPaciente"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:background="@drawable/caja_modern_gris"
+        android:hint="Apellido Paterno"
+        android:paddingStart="12dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/cajaNombrePaciente"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Apellido Materno -->
+    <EditText
+        android:id="@+id/cajaMaternoPaciente"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:background="@drawable/caja_modern_gris"
+        android:hint="Apellido Materno"
+        android:paddingStart="12dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/cajaPaternoPaciente"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Edad -->
+    <EditText
+        android:id="@+id/cajaEdadPaciente"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:background="@drawable/caja_modern_gris"
+        android:hint="Edad"
+        android:paddingStart="12dp"
+        android:layout_marginTop="15dp"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/cajaMaternoPaciente"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- SSN Médico Cabecera -->
+    <EditText
+        android:id="@+id/cajaSSNMedicoPaciente"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:background="@drawable/caja_modern_gris"
+        android:hint="SSN Médico de Cabecera"
+        android:paddingStart="12dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/cajaEdadPaciente"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- BOTÓN GUARDAR -->
+    <Button
+        android:id="@+id/btnGuardarPaciente"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/boton_redondo"
+        android:onClick="agregarPaciente"
+        android:text="Guardar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cajaSSNMedicoPaciente" />
+
+    <!-- BOTÓN REGRESAR -->
+    <Button
+        android:id="@+id/btnRegresarPaciente"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/boton_redondo"
+        android:onClick="regresar"
+        android:text="Regresar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnGuardarPaciente" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

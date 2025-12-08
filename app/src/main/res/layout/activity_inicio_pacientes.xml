@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutPacientes"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#849DB2"
+    android:paddingTop="40dp"
+    tools:context=".ActivityPacientes">
+
+    <!-- TÍTULO SUPERIOR -->
+    <TextView
+        android:id="@+id/txtTituloPacientes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gestión de Pacientes"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- BOTÓN ALTAS -->
+    <Button
+        android:id="@+id/btnAltasPacientes"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/boton_redondo"
+        android:onClick="abrirActivitiesPaciente"
+        android:text="Altas"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTituloPacientes" />
+
+    <!-- BOTÓN BAJAS -->
+    <Button
+        android:id="@+id/btnBajasPacientes"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/boton_redondo"
+        android:onClick="abrirActivitiesMedico"
+        android:text="Bajas"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnAltasPacientes" />
+
+    <!-- BOTÓN CAMBIOS -->
+    <Button
+        android:id="@+id/btnCambiosPacientes"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/boton_redondo"
+        android:onClick="abrirActivitiesMedico"
+        android:text="Cambios"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnBajasPacientes" />
+
+    <!-- BOTÓN CONSULTAS -->
+
+    <!-- BOTÓN REGRESAR -->
+    <Button
+        android:id="@+id/btnConsultasPacientes"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/boton_redondo"
+        android:onClick="abrirActivitiesMedico"
+        android:text="Consultas"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCambiosPacientes" />
+
+    <Button
+        android:id="@+id/btnRegresarPaciente"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/boton_redondo"
+        android:onClick="regresar"
+        android:text="Regresar"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnConsultasPacientes" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

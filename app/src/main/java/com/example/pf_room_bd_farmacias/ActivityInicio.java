@@ -21,7 +21,7 @@ public class ActivityInicio extends Activity {
         if (view.getId() == R.id.btn_medicos){
             i = new Intent(this, ActivityMedicos.class);
         } else if (view.getId() == R.id.btn_pacientes) {
-
+            i = new Intent(this, ActivityPacientes.class);
         } else if (view.getId() == R.id.btn_cerrar_sesion) {
             i = new Intent(this, MainActivity.class);
         }
