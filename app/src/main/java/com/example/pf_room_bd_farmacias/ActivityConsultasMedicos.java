@@ -47,6 +47,10 @@ public class ActivityConsultasMedicos extends Activity {
         searchEditText.setFilters(new InputFilter[]{
                 (source, start, end, dest, dstart, dend) -> {
 
+                    if (source.length() == 0) {
+                        return null;
+                    }
+
                     String permitido = "[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+";
 
                     if (source.toString().matches(permitido)) {

@@ -2,7 +2,10 @@ package com.example.pf_room_bd_farmacias;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.widget.EditText;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,6 +37,35 @@ public class ActivityConsultasPacientes extends Activity {
         recycler.setLayoutManager(new LinearLayoutManager(this));
         adapter = new AdapterPacientes(listaFiltrada);
         recycler.setAdapter(adapter);
+
+        int id = cajaBuscar.getContext()
+                .getResources()
+                .getIdentifier("android:id/search_src_text", null, null);
+
+        EditText searchEditText = cajaBuscar.findViewById(id);
+
+        searchEditText.setFilters(new InputFilter[]{
+                (source, start, end, dest, dstart, dend) -> {
+
+                    if (source.length() == 0) {
+                        return null;
+                    }
+                    
+                    String permitido = "[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+";
+
+                    if (source.toString().matches(permitido)) {
+                        return null; // aceptar
+                    }
+
+                    Toast.makeText(
+                            ActivityConsultasPacientes.this,
+                            "Solo puedes escribir letras y números",
+                            Toast.LENGTH_SHORT
+                    ).show();
+
+                    return ""; // bloquear
+                }
+        });
 
         cargarTodosLosPacientes();
         configurarFiltro();
