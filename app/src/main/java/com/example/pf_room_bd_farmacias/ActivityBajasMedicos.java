@@ -45,7 +45,10 @@ public class ActivityBajasMedicos extends Activity {
 
         InputFilter soloNumeros = (source, start, end, dest, dstart, dend) -> {
             for (int i = start; i < end; i++) {
-                if (!Character.isDigit(source.charAt(i))) return "";
+                if (!Character.isDigit(source.charAt(i))) {
+                    Toast.makeText(this, "Solo debes ingresar números", Toast.LENGTH_SHORT).show();
+                    return "";
+                }
             }
             return null;
         };
