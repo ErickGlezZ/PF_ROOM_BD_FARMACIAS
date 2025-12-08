@@ -2,6 +2,8 @@ package com.example.pf_room_bd_farmacias;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.widget.EditText;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -36,6 +38,31 @@ public class ActivityConsultasMedicos extends Activity {
         adapter = new AdapterMedicos(listaFiltrada);
         recycler.setAdapter(adapter);
 
+        int id = cajaBuscar.getContext()
+                .getResources()
+                .getIdentifier("android:id/search_src_text", null, null);
+
+        EditText searchEditText = cajaBuscar.findViewById(id);
+
+        searchEditText.setFilters(new InputFilter[]{
+                (source, start, end, dest, dstart, dend) -> {
+
+                    String permitido = "[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+";
+
+                    if (source.toString().matches(permitido)) {
+                        return null; // se acepta
+                    }
+
+                    Toast.makeText(
+                            ActivityConsultasMedicos.this,
+                            "Solo puedes escribir letras y números",
+                            Toast.LENGTH_SHORT
+                    ).show();
+
+                    return "";
+                }
+        });
+
         cargarTodosLosMedicos();
         configurarFiltro();
     }
@@ -67,7 +94,7 @@ public class ActivityConsultasMedicos extends Activity {
 
             @Override
             public boolean onQueryTextSubmit(String query) {
-                return false; // no hacemos nada al dar enter
+                return false;
             }
 
             @Override
